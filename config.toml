@@ -357,13 +357,13 @@ languageName = "English"
       # Disqus comment config
       [params.page.comment.disqus]
         # 
-        enable = false
+        enable = true
         # Disqus shortname to use Disqus in posts
         shortname = "auxten"
       # Gitalk comment config
       [params.page.comment.gitalk]
         # 
-        enable = true
+        enable = false
         owner = "auxten"
         repo = "site"
         clientId = "b21268d02032b82df95b"

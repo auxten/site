@@ -47,6 +47,11 @@ body {
   }
 }
 
+figcaption {
+  color: #999;
+  font: 0.9em monospace;
+}
+
 @include link(true, true);
 
 @import "../_partial/mask";

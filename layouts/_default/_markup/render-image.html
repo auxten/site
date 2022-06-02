@@ -1,5 +1,5 @@
 <picture>
-  {{ $isJPG := eq (path.Ext .Destination) ".jpg" }}
+  <!-- {{ $isJPG := eq (path.Ext .Destination) ".jpg" }}
   {{ $isPNG := eq (path.Ext .Destination) ".png" }}
 
   {{ if ($isJPG) -}}
@@ -39,14 +39,25 @@
     {{ $path := path.Join .Page.File.Dir .Destination }}
     {{- $img = resources.Get $path -}}
 {{- end -}}
-{{- with $img -}}
-    <img
+{{- with $img -}} -->
+  {{ if $.Title }}
+    <figure>
+      <img
         src="{{ $img.RelPermalink | safeURL }}"
         alt="{{ $.Text }}"
-        {{ with .Title}} title="{{ . }}"{{ end }}
+        {{ with $.Title}} title="{{ . }}"{{ end }}
         loading="lazy"
         decoding="async"
-        width="{{ .Width }}"
+      />
+      <figcaption>{{ $.Title }}</figcaption>
+    </figure>
+  {{ else }}
+    <img
+      src="{{ $img.RelPermalink | safeURL }}"
+      alt="{{ $.Text }}"
+      loading="lazy"
+      decoding="async"
     />
-{{- end -}}
+  {{ end }}
+<!-- {{- end -}} -->
 </picture>

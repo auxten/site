@@ -43,15 +43,14 @@ As far as I know, there is no silver bullet to solve these `*.dylib` packaging p
 
 I am quite suffered from the Linux dynamic lineage problems. Linux kernel ABI is quite stable, and glibc handles the ABI very carefully. 
 
-![image-20220525235248559](image-20220525235248559.png)
 
-> from: https://abi-laboratory.pro/?view=timeline&l=glibc
+![Glibc ABI history](image-20220525235248559.png "Glibc ABI history from: https://abi-laboratory.pro/?view=timeline&l=glibc")
 
 Even libs like OpenSSL tried their best to keep a stable ABI.
 
-![image-20220526001558775](image-20220526001558775.png)
+<!--img src="image-20220526001558775.png" alt="OpenSSL ABI history" title="" style="zoom:36%;" /-->
 
-> from: https://abi-laboratory.pro/?view=timeline&l=openssl
+![OpenSSL ABI history](image-20220526001558775.png "OpenSSL ABI history from: https://abi-laboratory.pro/?view=timeline&l=openssl")
 
 But the upper level libs shipped with different Linux distributions, pkg management systems constructed a matrix. 
 
@@ -59,9 +58,12 @@ When it comes to macOS, most libs shipped with system are quite stable and thing
 
 Although, the `ps` command in macOS is not GNU version, but you can still see the big difference of dependent libs of `/bin/ps` between CentOS 8.1` and `macOS 12.3.
 
-<img src="image-20220526003851000.png" alt="image-20220526003851000" style="zoom:50%;" />
+<figure>
+<img src="image-20220526003851000.png" alt="image-20220526003851000" title="/bin/ps so dependence in CentOS 8.1" style="width: 70%;" />
+<figcaption>/bin/ps so dependence in CentOS 8.1</figcaption>
+</figure>
 
-![image-20220526003830227](image-20220526003830227.png)
+![image-20220526003830227](image-20220526003830227.png "/bin/ps dylib dependence in macOS 12.3")
 
 Solving the packaging of dynamic libs is quite nasty. But I think the main principles are just two:
 
@@ -72,13 +74,13 @@ The first principle is easy to understand, lower version lib usually means less 
 
 For the "Trim lib" part, here is an example of how I tried to solve the `pyarrow` dependence tree. To upload SuperChart to MAS (Mac App Store), I have to get rid of the dependence of `Security.framework` which introduced by `pyarrow`.
 
-![image-20220529000559809](image-20220529000559809.png)
+![image-20220529000559809](image-20220529000559809.png "dylib dependence of libarrow.500.dylib")
 
 First, I tried to remove pyarrow from SuperChart. Later I found that may cost a lot because it is not only involved in the parquet reading part but also superset serializing part. After some digging, I realized that the `Security.framework` sames to be some system level OpenSSL in macOS. As we usually use pyarrow for serializing/deserializing or parquet reading, I don't think the crypto stuff is not really necessary for pyarrow.
 
 Easy to know pyarrow is just a Python binding of `Apache Arrow`, so all I need to do is trimming libarrow outof the `Security.framework`. Thanks to well implemented Arrow compiling system, after some flags setting. I got a very clean `libarrow.500.dylib`.
 
-![image-20220529132321105](image-20220529132321105.png)
+![image-20220529132321105](image-20220529132321105.png "less dylib dependence of libarrow.500.dylib")
 
 ## Frontend
 
@@ -116,13 +118,13 @@ But as I know, nearly every OS is shipping with a `XXWebView` inside to make it 
 
 So I got `pywebview` which let me open and control `WKWebview` to emulate an App UI. And also, thanks to my "the smaller the better" choice made it possible to put [SuperChart](https://apps.apple.com/app/apple-store/id1620737264?pt=124743961&ct=blog&mt=8) to MAS. As Chromium uses some deprecated API of macOS which is not allowed for MAS.
 
-![image-20220529152353280](image-20220529152353280.png)
+![image-20220529152353280](image-20220529152353280.png "Chromium uses some deprecated API of macOS which is not allowed for MAS")
 
 *Chromium uses some deprecated API of macOS which is not allowed for MAS*
 
 That I think is also quite interesting, and I will write it out later. Maybe the title could be "How I put a Python-based App onto Mac App Store".
 
-![image-20220529152531628](image-20220529152531628.png)
+![image-20220529152531628](image-20220529152531628.png "SuperChart in MacAppStore")
 
 <!--# Mac App Store
 

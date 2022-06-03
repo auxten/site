@@ -107,11 +107,6 @@ Electron.js is really really popular, after simply:
 ps aux | grep '(Renderer).app' | grep -v "Google Chrome.app"
 ```
 
-
-```c
-int main()
-```
-
 I saw 3 App built with Electron.js are currently running on my MacBook.
 
 But as I know, nearly every OS is shipping with a `XXWebView` inside to make it easy for App to open a web page. Why don't I just use that instead of packaging a Chromium inside which makes my package approximate 100MB larger.

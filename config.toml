@@ -55,16 +55,16 @@ languageName = "English"
   # site default theme ["auto", "light", "dark"]
   defaultTheme = "auto"
   # public git repo url only then enableGitInfo is true
-  gitRepo = ""
+  gitRepo = "http://github.com/auxten/site"
   #  which hash function used for SRI, when empty, no SRI is used
   # ["sha256", "sha384", "sha512", "md5"]
-  fingerprint = ""
+  fingerprint = "sha256"
   #  date format
   dateFormat = "2006-01-02"
   # website title for Open Graph and Twitter Cards
-  title = "My cool site"
+  title = "a Database guy"
   # website description for RSS, SEO, Open Graph and Twitter Cards
-  description = "This is my cool site"
+  description = "auxten, a Database guy"
   # website images for Open Graph and Twitter Cards
   images = ["/logo.png"]
 
@@ -89,7 +89,7 @@ languageName = "English"
 
   # Footer config
   [params.footer]
-    enable = false
+    enable = true
     #  Custom content (HTML format is supported)
     custom = ''
     #  whether to show Hugo and theme info
@@ -99,7 +99,7 @@ languageName = "English"
     #  whether to show the author
     author = true
     # Site creation time
-    since = 2019
+    since = 2009
     # ICP info only in China (HTML format is supported)
     icp = ""
     # license info (HTML format is supported)

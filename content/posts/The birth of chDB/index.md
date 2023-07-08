@@ -8,7 +8,7 @@ draft: false
 
 
 
-# The born of chDB
+# Rocket Engine on a Bicycle
 
 Before officially starting the journey of chDB, I think it's best to give a brief introduction to ClickHouse. In recent years, "vectorized engines" have been particularly popular in the OLAP database community. The main reason is the addition of more and more SIMD instructions in CPUs, which greatly accelerates Aggregation, Sort, and Join operations for large amounts of data in OLAP scenarios. ClickHouse has made very detailed optimizations in multiple areas such as "vectorization", which can be seen from its [optimization on lz4 and memcpy](https://habr.com/en/companies/yandex/articles/457612/).
 

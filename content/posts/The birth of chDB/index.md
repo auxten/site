@@ -1,6 +1,6 @@
 
 ---
-title: "The born of chDB"
+title: "The birth of chDB"
 date: 2023-07-08T12:08:19+08:00
 draft: false
 

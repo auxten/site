@@ -7,8 +7,6 @@ draft: false
 ---
 
 
-**[Auxten Wang](https://twitter.com/auxten)**
-
 ## The Start
 
 During the Lunar New Year in February last year, in order to solve the efficiency problem of the machine learning model sample data I was facing at the time, I created chDB. Of course, compared to everything that the creators of ClickHouse have done so far, chDB is just a tiny hack on ClickHouse local.
@@ -51,7 +49,7 @@ So, what will chDB do next:
 2. Keep up with the latest ClickHouse releases
 3. Better integration with more programming languages and data sources
 
-Maybe you guys have better ideas. Please tell me [here](https://www.google.com/url?q=https://github.com/orgs/chdb-io/discussions&sa=D&source=editors&ust=1709710998768552&usg=AOvVaw1lh9E85EgIkoalIBZ1epjz) 😛
+Maybe you guys have better ideas. Please tell me on [chDB discussions](https://github.com/orgs/chdb-io/discussions) 😛
 
 For more information about chDB joining ClickHouse, please visit [ClickHouse Blog](https://clickhouse.com/blog/chdb-joins-clickhouse-family)
 

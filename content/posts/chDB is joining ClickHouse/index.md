@@ -11,19 +11,19 @@ draft: false
 
 During the Lunar New Year in February last year, in order to solve the efficiency problem of the machine learning model sample data I was facing at the time, I created chDB. Of course, compared to everything that the creators of ClickHouse have done so far, chDB is just a tiny hack on ClickHouse local.
 
-<img src="image4.png" alt="img" style="zoom:30%;" />
+<img src="/chdb-is-joining-clickhouse/image4.png" alt="img" style="zoom:30%;" />
 
 ## Running Everywhere
 
 Despite many imperfections, chDB quickly gained a lot of fans in a way that surprised me. They run chDB on Notebook, AWS Lambda, Raspberry Pi, and even Android Phone. I realized that many people are impressed by the amazing performance of ClickHouse, and now people need to use ClickHouse to solve their data problems in almost all possible places.
 
-<img src="image3.jpg" alt="img" style="zoom:33%;" />
+<img src="/chdb-is-joining-clickhouse/image3.jpg" alt="img" style="zoom:33%;" />
 
 ## Community
 
 ClickHouse's CTO Alexey (my idol) and Product VP Tanya quickly contacted me, and I received a lot of encouragement. ClickHouse is a very friendly and open community, and the official ClickHouse Blog has also introduced chDB many times. chDB has also got many contributors:
 
-<img src="image1.png" alt="img" style="zoom:33%;" />
+<img src="/chdb-is-joining-clickhouse/image1.png" alt="img" style="zoom:33%;" />
 
 
 

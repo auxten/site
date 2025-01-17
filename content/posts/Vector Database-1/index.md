@@ -1,7 +1,7 @@
 
 ---
 title: "Vector Databases: A Traditional Database Developer's Perspective"
-date: 2025-09-07T21:00:19+08:00
+date: 2025-01-16T21:00:19+08:00
 draft: false
 
 ---
@@ -10,7 +10,7 @@ draft: false
 
 # Vector Databases: A Traditional Database Developer's Perspective
 
-As a traditional database developer with machine learning platform experience from my time at Shopee, I've recently been exploring vector databases, particularly Pinecone. Rather than providing a comprehensive technical evaluation, I want to share my unique insights on why vector databases are gaining significant attention and substantial valuations in the funding market.
+As a traditional database developer with machine learning platform experience from my time at Shopee, I've recently been exploring vector databases, particularly Pinecone. Rather than providing a comprehensive technical evaluation, I want to share my thoughts on why vector databases are gaining significant attention and substantial valuations in the funding market.
 
 ## Demystifying Vector Databases
 
@@ -24,7 +24,7 @@ One common misconception I've noticed is that vector databases must use Large La
 
 ![pincone](pinecone-emb.png)
 
-Here's my key insight: Production-ready embeddings don't require massive models or expensive GPU infrastructure. For instance, the [multilingual-E5-large model](https://huggingface.co/intfloat/multilingual-e5-large) recommended by Pinecone:
+Here's my take away: Production-ready embeddings don't require massive models or expensive GPU infrastructure. For instance, the [multilingual-E5-large model](https://huggingface.co/intfloat/multilingual-e5-large) recommended by Pinecone:
 - Has only 24 layers
 - Contains about 560 million parameters
 - Requires less than 3GB of memory
@@ -52,15 +52,17 @@ As a database developer, I envision a more intuitive vector database design wher
 
 ```sql
 SELECT * FROM text_table 
-WHERE input_text EMBEDDING_LIKE text
+  WHERE input_text EMBEDDING_LIKE text
 ```
 
 Users shouldn't need to interact directly with embeddings. The database should handle embedding generation during insertion and querying, making the vector search feel like a natural extension of traditional database operations.
 
-## Commercial Insights
+## Commercial Considerations
 
 Pinecone's partnership model with cloud providers like Azure offers interesting advantages, particularly for enterprise customers. The Azure Marketplace integration enables unified billing, which is a significant benefit for corporate users. Additionally, their getting started experience is well-designed, though users still need a solid understanding of embeddings and vector search to build effective applications.
 
 ## Conclusion
 
 Vector databases represent an exciting evolution in search technology, but they don't need to be as complex or resource-intensive as many assume. As the field matures, I hope to see more focus on user-friendly abstractions and cost-effective implementations that make this powerful technology more accessible to developers.
+
+So, how would it be like if there is a library that put a embedding model into chDB? 🤔

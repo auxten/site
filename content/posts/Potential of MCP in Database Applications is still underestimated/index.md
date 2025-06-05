@@ -8,10 +8,7 @@ draft: false
 
 
 
-
 *How business-logic-aware MCP implementations can transform user experiences beyond simple database management*
-
-# Potential of MCP in Database Applications is still underestimated
 
 ---
 

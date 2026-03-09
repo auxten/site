@@ -1,6 +1,6 @@
 ---
 title: "Context Management Is the Real Bottleneck for AI Agents"
-date: 2026-03-09T00:07:00+08:00
+date: 2026-02-23T00:07:00+08:00
 draft: false
 
 ---
